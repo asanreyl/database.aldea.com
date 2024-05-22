@@ -1,0 +1,63 @@
+### Obtener la lista de usuarios.
+GET http://localhost:3300/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
+
+### Obtener un usuario.
+GET http://localhost:3300/api/users/id HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "MDA0NTJGRTFGQTQ3RUE1RjhENkY0N0FERDI4QTEyMEI="
+}
+
+
+### Crear usuario.
+POST http://localhost:3300/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "userName": "Angel Luis",
+  "lastName": "Santana Reyes",
+  "email": "angelluis.santana@gmail.com",
+  "password": "1478",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Crear usuario
+POST http://localhost:3300/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "userName": "Laura María",
+  "lastName": "Sarmiento Melian",
+  "email": "lauramari@gmail.com",
+  "password": "1478",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Actualizar usuario.
+POST http://localhost:3300/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "NjZCNUY0NjY0NkQxRUM5RDYyRjQ0NjgxMTQ5N0E2QTI=",
+  "userName": "Luis",
+  "lastName": "Reyes",
+  "email": "angelluis.santana@gmail.com",
+  "password": "8796",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+
+### Borrar un usuario
+DELETE http://localhost:3300/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "NjZCNUY0NjY0NkQxRUM5RDYyRjQ0NjgxMTQ5N0E2QTI=", 
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}

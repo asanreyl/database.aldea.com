@@ -1,0 +1,32 @@
+
+### Borrar una lectura volumen
+DELETE http://localhost:3300/api/volume HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "RTBFOTIyRDQwQTJGNDFGMjJEMTFGQjJCNUJBM0Y1NUI=", 
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Crear lectura de volumen
+POST http://localhost:3300/api/volume HTTP/1.1
+Content-Type: application/json
+
+{
+  "wattermeterId" : "MDBDRjk5NENGNDAyQTk4OERERTYwRTg0Mjc1NTFDMjI=",
+  "date": "2024-05-31T23:00:00.000Z",
+  "value": "22,5", 
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Actualizar lectura de volumen.
+POST http://localhost:3300/api/volume/id HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "RTBFOTIyRDQwQTJGNDFGMjJEMTFGQjJCNUJBM0Y1NUI=",
+  "wattermeterId" : "MDBDRjk5NENGNDAyQTk4OERERTYwRTg0Mjc1NTFDMjI=",
+  "date": "2024-05-31T23:00:00.000Z",
+  "value": "26,2", 
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}

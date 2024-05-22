@@ -1,0 +1,67 @@
+### Obtener la lista de contadores.
+GET http://localhost:3300/api/wattermeters HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
+
+### Obtener un contador.
+GET http://localhost:3300/api/wattermeters/id HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "QUVCMkYzNjYyODg3N0VDNzlFOUI2NjY2Nzg2QjdEMUU="
+}
+
+### Obtener las lecturas semanales de un contador.
+POST http://localhost:3300/api/getWattermetersReadings HTTP/1.1
+Content-Type: application/json
+
+{
+  "wattermeterId": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ=",
+  "date": "2024-05-07T23:00:00.000Z"
+}
+
+
+
+### Crear contador.
+POST http://localhost:3300/api/wattermeters HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "CARRETERA ANTIGUA KM 12",
+  "observations": "observaciones del contador de prueba ",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Crear contador
+POST http://localhost:3300/api/wattermeters HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "TUNEL 2024",
+  "observations": "Observaciones del contador, último túnel, año 2024",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+### Actualizar contador.
+POST http://localhost:3300/api/wattermeters HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "RjU5QkJGMEU0RDRGQjlBM0FDQzlERjgyQUZFMUY2OUM=",
+  "name": "TUNEL",
+  "observations": "Observaciones contador Tunel",
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
+
+
+### Borrar un contador
+DELETE http://localhost:3300/api/wattermeters HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": "QUUzQTdEMjc5RjRBMEVFNjFCM0VDREJCRDI0RDZCREU=", 
+  "userGUID": "QzdCMzE2RkZDMjRCMDAyM0ExRDNCMjA3N0Y2OTU3QzQ="
+}
