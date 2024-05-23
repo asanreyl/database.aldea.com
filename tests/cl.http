@@ -1,6 +1,6 @@
 
 ### Borrar una lectura cl
-DELETE http://localhost:3300/api/cl HTTP/1.1
+DELETE http://localhost:3300/deleteCl HTTP/1.1
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### Crear lectura de cloro
-POST http://localhost:3300/api/cl HTTP/1.1
+POST http://localhost:3300/api/saveCl HTTP/1.1
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Actualizar lectura de cloro.
-POST http://localhost:3300/api/cl/id HTTP/1.1
+POST http://localhost:3300/api/saveCl HTTP/1.1
 Content-Type: application/json
 
 {
