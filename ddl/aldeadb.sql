@@ -3,8 +3,6 @@
 
 CREATE DATABASE `aldeadb` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-
-
 -- aldeadb.usuarios definition
 
 CREATE TABLE `usuarios` (
@@ -13,6 +11,7 @@ CREATE TABLE `usuarios` (
   `apellidos` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `clave` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `isAdmin` tinyint NOT NULL DEFAULT '0',  -- administrador (1) - lector (0)
   `created` datetime NOT NULL,
   `createdId` int NOT NULL,
   `modified` datetime DEFAULT NULL,
@@ -20,13 +19,12 @@ CREATE TABLE `usuarios` (
   `deleted` datetime DEFAULT NULL,
   `deletedId` int DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- aldeadb.contadores definition
 
 CREATE TABLE `contadores` (
-  `idContador` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `observaciones` varchar(254) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `created` datetime NOT NULL,
@@ -35,14 +33,15 @@ CREATE TABLE `contadores` (
   `modifiedId` int DEFAULT NULL,
   `deleted` datetime DEFAULT NULL,
   `deletedId` int DEFAULT NULL,
-  PRIMARY KEY (`idContador`),
+  `isWatterCounter` tinyint NOT NULL DEFAULT '1',  -- 1 es un contador / 0 es un punto de muestreo
+  PRIMARY KEY (`id`),
   KEY `contadores_usuarios_FK` (`createdId`),
   KEY `contadores_usuarios_FK_1` (`modifiedId`),
   KEY `contadores_usuarios_FK_2` (`deletedId`),
   CONSTRAINT `contadores_usuarios_FK` FOREIGN KEY (`createdId`) REFERENCES `usuarios` (`idUsuario`),
   CONSTRAINT `contadores_usuarios_FK_1` FOREIGN KEY (`modifiedId`) REFERENCES `usuarios` (`idUsuario`),
   CONSTRAINT `contadores_usuarios_FK_2` FOREIGN KEY (`deletedId`) REFERENCES `usuarios` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 -- aldeadb.lecturasph definition
